@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <video id="camera" autoplay muted></video>    
+
+    <script>
+        // const camera = document.getElementById('camera');
+
+        // navigator.mediaDevices.getUserMedia({video : true})
+        // .then(stream =>{
+        //     camera.srcObject = stream;
+        // })
+        // .catch(error =>{
+        //     console.log('Error: ', error)
+        // });
+
+
+        const camera = document.getElementById('camera');
+
+  navigator.mediaDevices.getUserMedia({ video: true })
+    .then(stream => {
+      camera.srcObject = stream;   
+
+    })
+    .catch(error => {
+      console.error('Error:',   
+ error);
+
+      // Provide a user-friendly message or fallback mechanism
+      const errorMessage = 'Unable to access your webcam. Please check your device settings or try again later.';
+      alert(errorMessage);
+    });
+    </script>
+</body>
+</html>
